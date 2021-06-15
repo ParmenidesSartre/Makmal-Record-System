@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(elt2m=pzt!xiazs72@bb7$s4yp=)!z#xno7eds+q_)8ywxgql
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['demo-makmal-system.herokuapp.com']
 
 
 # Application definition
