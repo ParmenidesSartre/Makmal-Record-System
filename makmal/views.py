@@ -8,7 +8,7 @@ from .render import Render
 def index(request):
     return render(request, 'pages/index.html')
 
-
+@login_required
 def makmal(request):
     # Obtain all record from database
     reports = Report.objects.order_by('-done_on')
@@ -19,7 +19,7 @@ def makmal(request):
 
     return render(request, 'makmal/strelise.html', context )
 
-
+@login_required
 def edit_report(request, pk):
     report = get_object_or_404(Report, id=pk)
     if request.method == "POST":
@@ -39,7 +39,7 @@ def edit_report(request, pk):
 
     return render(request, 'makmal/editrecord.html', context )
 
-
+@login_required
 def add_record(request):
     if request.method == "POST":
         form = AddRecordForm(request.POST)
@@ -55,7 +55,7 @@ def add_record(request):
 
     return render(request, 'makmal/addrecord.html', context )
 
-
+@login_required
 def print_report(request, pk):
     report = get_object_or_404(Report, id=pk)
     form = ReportForm(instance=report)
