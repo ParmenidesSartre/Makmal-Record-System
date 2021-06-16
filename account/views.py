@@ -51,3 +51,11 @@ def loguserout(request):
     if request.method == 'POST':
         auth.logout(request)
         return redirect('login')
+
+def error_404(request, exception):
+        data = {}
+        return render(request,'404.html', data)
+
+def error_500(request):
+        data = {}
+        return render(request,'404.html', data)

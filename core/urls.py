@@ -21,3 +21,7 @@ urlpatterns = [
     path('', include('makmal.urls')),
     path('account/', include('account.urls')),
 ]
+
+
+handler404 = 'account.views.error_404'
+handler500 = 'account.views.error_500'
